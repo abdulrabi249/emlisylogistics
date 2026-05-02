@@ -1,732 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<title>Emily Logistics Ltd — Road Freight from Arbroath, Scotland</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    --paper: #f3eee4;
-    --paper-2: #ebe3d2;
-    --ink: #14140f;
-    --ink-soft: #2a2a22;
-    --rule: #14140f;
-    --hi-vis: #ff6a13;        /* haulage amber */
-    --hi-vis-2: #f5a300;      /* warning yellow */
-    --moss: #2f3a23;          /* deep highland green */
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK Freight &amp; Haulage — Emily Logistics Ltd</title>
+  <meta name="description" content="Emily Logistics Ltd — UK freight transport, general carrier services, and HGV workshop based in Arbroath, Scotland. Same-day, FTL and LTL across the UK.">
+  <meta name="author" content="Emily Logistics Ltd">
+  <meta name="robots" content="index, follow">
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  <link rel="canonical" href="https://emilylogisticsltd.co.uk/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
 
-  html, body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'Inter Tight', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
+  <!-- Open Graph -->
+  <meta property="og:title" content="UK Freight &amp; Haulage — Emily Logistics Ltd">
+  <meta property="og:description" content="Cargo that arrives on the hour. UK-wide freight transport from Arbroath.">
+  <meta property="og:url" content="https://emilylogisticsltd.co.uk/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Emily Logistics Ltd">
 
-  body {
-    background-image:
-      radial-gradient(circle at 1px 1px, rgba(20,20,15,0.07) 1px, transparent 0);
-    background-size: 4px 4px;
-  }
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UK Freight &amp; Haulage — Emily Logistics Ltd">
+  <meta name="twitter:description" content="Cargo that arrives on the hour. UK-wide freight transport from Arbroath.">
 
-  a { color: inherit; text-decoration: none; }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  /* ---------- TOP BAR ---------- */
-  .topbar {
-    border-bottom: 1px solid var(--rule);
-    background: var(--ink);
-    color: var(--paper);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 8px 28px;
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  .topbar .marquee {
-    display: flex;
-    gap: 48px;
-    animation: slide 40s linear infinite;
-  }
-  .topbar span.dot::before { content: "● "; color: var(--hi-vis); }
-  @keyframes slide {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  /* ---------- NAV ---------- */
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 22px 28px;
-    border-bottom: 1px solid var(--rule);
-    position: sticky;
-    top: 0;
-    background: var(--paper);
-    z-index: 50;
-  }
-  .logo {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
-    font-size: 22px;
-    letter-spacing: -0.02em;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .logo .mark {
-    width: 28px; height: 28px;
-    background: var(--ink);
-    color: var(--hi-vis);
-    display: grid; place-items: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 700;
-    border-radius: 2px;
-  }
-  .nav-links {
-    display: flex; gap: 32px;
-    font-size: 13px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-  .nav-links a { position: relative; padding-bottom: 4px; }
-  .nav-links a::after {
-    content: ''; position: absolute; left: 0; bottom: 0;
-    width: 0; height: 2px; background: var(--hi-vis);
-    transition: width 0.3s ease;
-  }
-  .nav-links a:hover::after { width: 100%; }
-  .nav-cta {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 12px 22px;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border: 1px solid var(--ink);
-    transition: all 0.2s;
-  }
-  .nav-cta:hover { background: var(--hi-vis); border-color: var(--hi-vis); color: var(--ink); }
-
-  @media (max-width: 760px) {
-    .nav-links { display: none; }
-    .nav-cta { padding: 10px 16px; font-size: 11px; }
-  }
-
-  /* ---------- HERO ---------- */
-  .hero {
-    padding: 60px 28px 80px;
-    border-bottom: 1px solid var(--rule);
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-  .hero-meta {
-    display: flex;
-    justify-content: space-between;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 28px;
-    color: var(--ink-soft);
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    padding: 10px 0;
-  }
-  .hero h1 {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
-    font-size: clamp(56px, 12vw, 200px);
-    line-height: 0.88;
-    letter-spacing: -0.04em;
-    margin-bottom: 32px;
-  }
-  .hero h1 .italic {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--hi-vis);
-  }
-  .hero h1 .underlined {
-    text-decoration: underline;
-    text-decoration-thickness: 4px;
-    text-underline-offset: 0.1em;
-  }
-  .hero-bottom {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
-    align-items: end;
-    border-top: 1px solid var(--rule);
-    padding-top: 32px;
-  }
-  @media (max-width: 860px) {
-    .hero-bottom { grid-template-columns: 1fr; gap: 24px; }
-  }
-  .hero-lede {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(18px, 2.2vw, 24px);
-    line-height: 1.4;
-    max-width: 540px;
-  }
-  .hero-stat .num {
-    font-family: 'Fraunces', serif;
-    font-size: 64px;
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -0.03em;
-  }
-  .hero-stat .label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--ink-soft);
-    margin-top: 8px;
-  }
-
-  /* truck illustration */
-  .truck-svg {
-    position: absolute;
-    right: -50px;
-    top: 30%;
-    width: 380px;
-    opacity: 0.08;
-    pointer-events: none;
-  }
-  @media (max-width: 1100px) {
-    .truck-svg { display: none; }
-  }
-
-  /* ---------- SERVICES ---------- */
-  .services {
-    padding: 100px 28px;
-    border-bottom: 1px solid var(--rule);
-  }
-  .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    max-width: 1400px;
-    margin: 0 auto 60px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--rule);
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  .section-header h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(36px, 5vw, 64px);
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-  .section-header h2 em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--hi-vis);
-  }
-  .section-header .num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-
-  .services-grid {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border: 1px solid var(--rule);
-  }
-  @media (max-width: 880px) {
-    .services-grid { grid-template-columns: 1fr; }
-  }
-  .service {
-    padding: 36px 32px 40px;
-    border-right: 1px solid var(--rule);
-    background: var(--paper);
-    position: relative;
-    transition: background 0.3s ease;
-  }
-  .service:last-child { border-right: none; }
-  @media (max-width: 880px) {
-    .service { border-right: none; border-bottom: 1px solid var(--rule); }
-    .service:last-child { border-bottom: none; }
-  }
-  .service:hover { background: var(--paper-2); }
-  .service .num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--hi-vis);
-    margin-bottom: 32px;
-    display: block;
-  }
-  .service h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin-bottom: 16px;
-  }
-  .service p {
-    font-size: 15px;
-    line-height: 1.55;
-    color: var(--ink-soft);
-    margin-bottom: 28px;
-  }
-  .service ul {
-    list-style: none;
-    padding-top: 16px;
-    border-top: 1px solid var(--rule);
-  }
-  .service ul li {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 6px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .service ul li::before {
-    content: '→';
-    color: var(--hi-vis);
-    font-weight: 700;
-  }
-
-  /* ---------- FACTS / SPECS ---------- */
-  .specs {
-    padding: 100px 28px;
-    background: var(--ink);
-    color: var(--paper);
-    border-bottom: 1px solid var(--rule);
-    position: relative;
-    overflow: hidden;
-  }
-  .specs::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent 40px,
-      rgba(255,106,19,0.04) 40px,
-      rgba(255,106,19,0.04) 80px
-    );
-    pointer-events: none;
-  }
-  .specs-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-  }
-  .specs h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(40px, 6vw, 88px);
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-    max-width: 900px;
-    margin-bottom: 60px;
-  }
-  .specs h2 em {
-    font-style: italic;
-    color: var(--hi-vis);
-    font-weight: 400;
-  }
-  .specs-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    border-top: 1px solid var(--paper);
-  }
-  @media (max-width: 860px) { .specs-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 480px) { .specs-grid { grid-template-columns: 1fr; } }
-
-  .spec-cell {
-    padding: 32px 24px;
-    border-right: 1px solid rgba(243,238,228,0.2);
-    border-bottom: 1px solid rgba(243,238,228,0.2);
-  }
-  .spec-cell:nth-child(4n) { border-right: none; }
-  .spec-cell .label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--hi-vis);
-    margin-bottom: 16px;
-  }
-  .spec-cell .value {
-    font-family: 'Fraunces', serif;
-    font-size: 22px;
-    line-height: 1.2;
-    font-weight: 500;
-  }
-
-  /* ---------- ROUTE / MAP SECTION ---------- */
-  .route {
-    padding: 100px 28px;
-    border-bottom: 1px solid var(--rule);
-  }
-  .route-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 60px;
-    align-items: center;
-  }
-  @media (max-width: 900px) { .route-inner { grid-template-columns: 1fr; } }
-
-  .route-text .eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--hi-vis);
-    margin-bottom: 24px;
-  }
-  .route-text h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(36px, 4.5vw, 56px);
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    margin-bottom: 24px;
-  }
-  .route-text h2 em {
-    font-style: italic; font-weight: 400; color: var(--hi-vis);
-  }
-  .route-text p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--ink-soft);
-    margin-bottom: 16px;
-    max-width: 480px;
-  }
-  .route-map {
-    background: var(--paper-2);
-    border: 1px solid var(--rule);
-    aspect-ratio: 4/3;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* ---------- TESTIMONIAL / QUOTE ---------- */
-  .quote {
-    padding: 120px 28px;
-    background: var(--paper-2);
-    border-bottom: 1px solid var(--rule);
-    text-align: center;
-  }
-  .quote-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .quote .mark {
-    font-family: 'Fraunces', serif;
-    font-size: 120px;
-    line-height: 0.5;
-    color: var(--hi-vis);
-    margin-bottom: 20px;
-  }
-  .quote blockquote {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(28px, 3.5vw, 48px);
-    line-height: 1.2;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    margin-bottom: 32px;
-  }
-  .quote blockquote em {
-    font-style: italic;
-    color: var(--hi-vis);
-    font-weight: 400;
-  }
-  .quote cite {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-style: normal;
-    color: var(--ink-soft);
-  }
-
-  /* ---------- CONTACT / CTA ---------- */
-  .contact {
-    padding: 100px 28px;
-    border-bottom: 1px solid var(--rule);
-  }
-  .contact-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 80px;
-  }
-  @media (max-width: 900px) { .contact-inner { grid-template-columns: 1fr; gap: 40px; } }
-
-  .contact h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(48px, 7vw, 96px);
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -0.03em;
-    margin-bottom: 32px;
-  }
-  .contact h2 em {
-    font-style: italic; font-weight: 400; color: var(--hi-vis);
-  }
-  .contact p {
-    font-size: 17px;
-    line-height: 1.5;
-    margin-bottom: 32px;
-    max-width: 540px;
-    color: var(--ink-soft);
-  }
-
-  form {
-    display: grid;
-    gap: 16px;
-    border-top: 1px solid var(--rule);
-    padding-top: 32px;
-  }
-  .field {
-    display: grid;
-    gap: 6px;
-  }
-  .field label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--ink-soft);
-  }
-  .field input, .field textarea, .field select {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid var(--rule);
-    padding: 10px 0;
-    font-family: 'Fraunces', serif;
-    font-size: 18px;
-    color: var(--ink);
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  .field input:focus, .field textarea:focus, .field select:focus {
-    border-bottom-color: var(--hi-vis);
-    border-bottom-width: 2px;
-  }
-  .field textarea { resize: vertical; min-height: 80px; font-family: 'Inter Tight', sans-serif; font-size: 15px; }
-
-  button.submit {
-    margin-top: 12px;
-    background: var(--ink);
-    color: var(--paper);
-    border: none;
-    padding: 18px 24px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  button.submit:hover { background: var(--hi-vis); color: var(--ink); }
-  button.submit::after { content: '→'; font-size: 18px; }
-
-  .contact-info {
-    border-left: 1px solid var(--rule);
-    padding-left: 40px;
-  }
-  @media (max-width: 900px) {
-    .contact-info { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 32px; }
-  }
-  .contact-info .block {
-    margin-bottom: 32px;
-  }
-  .contact-info .label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--hi-vis);
-    margin-bottom: 8px;
-  }
-  .contact-info .value {
-    font-family: 'Fraunces', serif;
-    font-size: 20px;
-    line-height: 1.3;
-  }
-
-  /* ---------- FOOTER ---------- */
-  footer {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 60px 28px 30px;
-  }
-  .footer-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(243,238,228,0.2);
-  }
-  @media (max-width: 860px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
-
-  .footer-brand .logo {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
-    font-size: 32px;
-    letter-spacing: -0.02em;
-    margin-bottom: 12px;
-    color: var(--paper);
-  }
-  .footer-brand .logo .mark { background: var(--hi-vis); color: var(--ink); }
-  .footer-brand p {
-    font-size: 13px;
-    line-height: 1.6;
-    color: rgba(243,238,228,0.6);
-    max-width: 320px;
-  }
-  .footer-col h4 {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--hi-vis);
-    margin-bottom: 16px;
-  }
-  .footer-col a, .footer-col li {
-    display: block;
-    font-size: 14px;
-    color: rgba(243,238,228,0.85);
-    line-height: 2;
-  }
-  .footer-col a:hover { color: var(--hi-vis); }
-  .footer-bottom {
-    max-width: 1400px;
-    margin: 30px auto 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: rgba(243,238,228,0.5);
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  /* ---------- SMALL MOBILE (480px and below) ---------- */
-  @media (max-width: 480px) {
-    .topbar { padding: 6px 16px; font-size: 9px; }
-    nav { padding: 16px; }
-    .logo { font-size: 18px; }
-    .logo .mark { width: 24px; height: 24px; font-size: 11px; }
-
-    .hero { padding: 32px 16px 48px; }
-    .hero-meta { flex-direction: column; gap: 4px; font-size: 9px; padding: 8px 0; }
-    .hero h1 { font-size: clamp(40px, 14vw, 56px); margin-bottom: 24px; }
-    .hero-bottom { gap: 20px; padding-top: 24px; }
-    .hero-lede { font-size: 16px; }
-    .hero-stat .num { font-size: 40px; }
-    .hero-stat .label { font-size: 9px; }
-
-    .services { padding: 60px 16px; }
-    .section-header { margin-bottom: 32px; }
-    .service { padding: 28px 20px 32px; }
-    .service h3 { font-size: 24px; }
-    .service p { font-size: 14px; }
-
-    .specs { padding: 60px 16px; }
-    .specs h2 { margin-bottom: 36px; }
-    .spec-cell { padding: 20px 16px; }
-    .spec-cell .value { font-size: 18px; }
-    .spec-cell:nth-child(4n) { border-right: none; }
-
-    .route { padding: 60px 16px; }
-    .route-inner { gap: 32px; }
-    .route-map { aspect-ratio: 1/1; }
-
-    .quote { padding: 60px 16px; }
-    .quote .mark { font-size: 72px; }
-    .quote blockquote { font-size: clamp(22px, 6vw, 28px); }
-
-    .contact { padding: 60px 16px; }
-    .contact-inner { gap: 32px; }
-    .contact h2 { font-size: clamp(36px, 10vw, 48px); }
-
-    .footer-inner { grid-template-columns: 1fr; gap: 28px; }
-    footer { padding: 40px 16px 24px; }
-    .footer-brand .logo { font-size: 24px; }
-    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
-  }
-
-  /* ---------- MEDIUM MOBILE (481px - 760px) ---------- */
-  @media (min-width: 481px) and (max-width: 760px) {
-    .hero { padding: 40px 20px 60px; }
-    .hero-meta { font-size: 10px; flex-wrap: wrap; gap: 8px; }
-    .hero-stat .num { font-size: 48px; }
-
-    .services { padding: 72px 20px; }
-    .specs { padding: 72px 20px; }
-    .route { padding: 72px 20px; }
-    .quote { padding: 80px 20px; }
-    .contact { padding: 72px 20px; }
-    footer { padding: 48px 20px 28px; }
-    .footer-bottom { flex-direction: column; align-items: flex-start; }
-  }
-
-  /* ---------- ANIMATIONS ---------- */
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .hero h1, .hero-lede, .hero-stat {
-    animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) both;
-  }
-  .hero-lede { animation-delay: 0.15s; }
-  .hero-stat:nth-of-type(1) { animation-delay: 0.25s; }
-  .hero-stat:nth-of-type(2) { animation-delay: 0.35s; }
-</style>
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://emilylogisticsltd.co.uk",
+    "name": "Emily Logistics Ltd",
+    "legalName": "EMILY LOGISTICS LTD",
+    "url": "https://emilylogisticsltd.co.uk",
+    "telephone": "REPLACE_WITH_REAL_PHONE",
+    "email": "REPLACE_WITH_SUPPORT_EMAIL",
+    "foundingDate": "2020-07-10",
+    "founder": {
+      "@type": "Person",
+      "name": "Iliyan Trifonov Sadzhakliev"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "28 Glebe Road",
+      "addressLocality": "Arbroath",
+      "addressRegion": "Angus",
+      "postalCode": "DD11 4HJ",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 56.5594,
+      "longitude": -2.5814
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "07:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "13:00"
+      }
+    ],
+    "iso6523Code": "0199:SC667067",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "Companies House",
+      "value": "SC667067"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -745,18 +102,18 @@
 </div>
 
 <!-- NAV -->
-<nav>
-  <div class="logo">
+<nav class="site-nav">
+  <a href="/" class="logo" aria-label="Emily Logistics Ltd home">
     <span class="mark">EL</span>
     Emily Logistics
-  </div>
-  <div class="nav-links">
-    <a href="#services">Services</a>
-    <a href="#operations">Operations</a>
-    <a href="#coverage">Coverage</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <a href="#contact" class="nav-cta">Request a Quote</a>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/" aria-current="page">Home</a></li>
+    <li><a href="/services.html">Services</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <a href="/contact.html" class="nav-cta">Request a Quote</a>
 </nav>
 
 <!-- HERO -->
@@ -774,14 +131,14 @@
 
   <div class="hero-grid">
     <div class="hero-meta">
-      <span>Issue №01 / Est. 2020</span>
+      <span>Issue No.01 / Est. 2020</span>
       <span>Road Freight Specialists</span>
-      <span>Arbroath → United Kingdom</span>
+      <span>Arbroath &rarr; United Kingdom</span>
     </div>
 
     <h1>
-      Cargo<br/>
-      that <span class="italic">arrives</span><br/>
+      Cargo<br>
+      that <span class="italic">arrives</span><br>
       on the <span class="underlined">hour</span>.
     </h1>
 
@@ -805,14 +162,14 @@
 <section class="services" id="services">
   <div class="section-header">
     <h2>What we <em>haul</em>.</h2>
-    <span class="num">§ 01 / Services</span>
+    <span class="num">&sect; 01 / Services</span>
   </div>
 
   <div class="services-grid">
     <div class="service">
       <span class="num">01 / Freight</span>
       <h3>Freight Transport by Road</h3>
-      <p>Full and part loads moved across mainland UK. Time-critical, palletised, or oversized — we plan the route, drive it, and confirm delivery in writing.</p>
+      <p>Full and part loads moved across mainland UK. Time-critical, palletised, or oversized &mdash; we plan the route, drive it, and confirm delivery in writing.</p>
       <ul>
         <li>Full Truck Loads (FTL)</li>
         <li>Less-Than-Truckload (LTL)</li>
@@ -824,7 +181,7 @@
     <div class="service">
       <span class="num">02 / Carriage</span>
       <h3>General Carrier Services</h3>
-      <p>Flexible movement of goods that don't fit the standard pallet — from machinery and trade tools to bulky, awkward, and one-off consignments.</p>
+      <p>Flexible movement of goods that don't fit the standard pallet &mdash; from machinery and trade tools to bulky, awkward, and one-off consignments.</p>
       <ul>
         <li>Plant &amp; equipment</li>
         <li>Trade &amp; site deliveries</li>
@@ -845,6 +202,10 @@
       </ul>
     </div>
   </div>
+
+  <div style="text-align:center; margin-top:40px;">
+    <a href="/services.html" class="service-cta">View all services</a>
+  </div>
 </section>
 
 <!-- SPECS -->
@@ -855,7 +216,7 @@
     <div class="specs-grid">
       <div class="spec-cell">
         <div class="label">Registered</div>
-        <div class="value">10 July 2020<br/>Companies House Scotland</div>
+        <div class="value">10 July 2020<br>Companies House Scotland</div>
       </div>
       <div class="spec-cell">
         <div class="label">Company No.</div>
@@ -863,27 +224,27 @@
       </div>
       <div class="spec-cell">
         <div class="label">Status</div>
-        <div class="value">Active<br/>Private Limited</div>
+        <div class="value">Active<br>Private Limited</div>
       </div>
       <div class="spec-cell">
         <div class="label">Base of Operations</div>
-        <div class="value">Arbroath<br/>Angus, Scotland</div>
+        <div class="value">Arbroath<br>Angus, Scotland</div>
       </div>
       <div class="spec-cell">
         <div class="label">SIC 49410</div>
-        <div class="value">Freight transport<br/>by road</div>
+        <div class="value">Freight transport<br>by road</div>
       </div>
       <div class="spec-cell">
         <div class="label">SIC 45200</div>
-        <div class="value">Maintenance and<br/>repair of vehicles</div>
+        <div class="value">Maintenance and<br>repair of vehicles</div>
       </div>
       <div class="spec-cell">
         <div class="label">SIC 53202</div>
-        <div class="value">Unlicensed carrier<br/>services</div>
+        <div class="value">Unlicensed carrier<br>services</div>
       </div>
       <div class="spec-cell">
         <div class="label">Filing</div>
-        <div class="value">Up-to-date<br/>Confirmed Oct 2025</div>
+        <div class="value">Up-to-date<br>Confirmed Oct 2025</div>
       </div>
     </div>
   </div>
@@ -893,43 +254,32 @@
 <section class="route" id="coverage">
   <div class="route-inner">
     <div class="route-text">
-      <div class="eyebrow">§ 02 / Coverage</div>
+      <div class="eyebrow">&sect; 02 / Coverage</div>
       <h2>From the <em>east coast</em> outwards.</h2>
-      <p>Arbroath sits on the A92 corridor between Dundee and Aberdeen — a working harbour town with road links south to the Central Belt and north to the Highlands. We use it as a launch point for deliveries the length of the British mainland.</p>
+      <p>Arbroath sits on the A92 corridor between Dundee and Aberdeen &mdash; a working harbour town with road links south to the Central Belt and north to the Highlands. We use it as a launch point for deliveries the length of the British mainland.</p>
       <p>Most jobs are quoted, accepted and on the road inside 24 hours. Long-standing routes south through Edinburgh, Glasgow, Newcastle and onwards to the Midlands and London run weekly.</p>
     </div>
 
     <div class="route-map">
       <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;">
-        <!-- stylised UK outline -->
         <path d="M180,40 Q200,30 220,45 L235,70 Q245,90 240,115 L250,135 Q255,155 245,170 L255,195 Q250,220 235,235 L210,255 Q190,265 175,260 L160,245 Q145,230 150,210 L140,190 Q130,170 140,150 L130,125 Q135,100 150,80 L165,55 Z"
               fill="#14140f" opacity="0.08" stroke="#14140f" stroke-width="1"/>
-
-        <!-- Arbroath marker (HQ) -->
         <circle cx="220" cy="90" r="8" fill="#ff6a13"/>
         <circle cx="220" cy="90" r="14" fill="none" stroke="#ff6a13" stroke-width="1" opacity="0.5">
           <animate attributeName="r" from="8" to="22" dur="2s" repeatCount="indefinite"/>
           <animate attributeName="opacity" from="0.6" to="0" dur="2s" repeatCount="indefinite"/>
         </circle>
-        <text x="232" y="94" font-family="JetBrains Mono, monospace" font-size="9" fill="#14140f" font-weight="600">ARBROATH · HQ</text>
-
-        <!-- destination markers -->
+        <text x="232" y="94" font-family="JetBrains Mono, monospace" font-size="9" fill="#14140f" font-weight="600">ARBROATH &middot; HQ</text>
         <circle cx="205" cy="115" r="3" fill="#14140f"/>
         <text x="212" y="118" font-family="JetBrains Mono, monospace" font-size="8" fill="#14140f">EDINBURGH</text>
-
         <circle cx="180" cy="125" r="3" fill="#14140f"/>
         <text x="135" y="128" font-family="JetBrains Mono, monospace" font-size="8" fill="#14140f">GLASGOW</text>
-
         <circle cx="210" cy="160" r="3" fill="#14140f"/>
         <text x="218" y="163" font-family="JetBrains Mono, monospace" font-size="8" fill="#14140f">NEWCASTLE</text>
-
         <circle cx="200" cy="200" r="3" fill="#14140f"/>
         <text x="208" y="203" font-family="JetBrains Mono, monospace" font-size="8" fill="#14140f">MANCHESTER</text>
-
         <circle cx="195" cy="245" r="3" fill="#14140f"/>
         <text x="203" y="248" font-family="JetBrains Mono, monospace" font-size="8" fill="#14140f">LONDON</text>
-
-        <!-- route lines -->
         <path d="M220,90 L205,115 L180,125" stroke="#ff6a13" stroke-width="1.5" fill="none" stroke-dasharray="3,3"/>
         <path d="M220,90 Q215,135 210,160 Q205,180 200,200 L195,245" stroke="#ff6a13" stroke-width="1.5" fill="none" stroke-dasharray="3,3"/>
       </svg>
@@ -940,11 +290,11 @@
 <!-- QUOTE -->
 <section class="quote">
   <div class="quote-inner">
-    <div class="mark">"</div>
+    <div class="mark">&ldquo;</div>
     <blockquote>
       A truck on time is the whole job. <em>Everything else</em> is paperwork.
     </blockquote>
-    <cite>— The Yard, 06:00 Monday</cite>
+    <cite>&mdash; The Yard, 06:00 Monday</cite>
   </div>
 </section>
 
@@ -953,35 +303,54 @@
   <div class="contact-inner">
     <div>
       <h2>Got a load that <em>needs moving</em>?</h2>
-      <p>Tell us the pickup, the drop, and roughly when. We'll come back with a price and a slot — usually inside the working day.</p>
+      <p>Tell us the pickup, the drop, and roughly when. We'll come back with a price and a slot &mdash; usually inside the working day.</p>
 
-      <form onsubmit="event.preventDefault(); alert('Thanks — we will be in touch shortly.'); this.reset();">
+      <div class="contact-direct">
+        <!-- REPLACE_WITH_REAL_PHONE — Route flex will replace before Apple submission -->
+        <a href="tel:REPLACE_WITH_REAL_PHONE" class="contact-line">
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">REPLACE_WITH_REAL_PHONE</span>
+        </a>
+        <!-- REPLACE_WITH_SUPPORT_EMAIL — Route flex will replace before Apple submission -->
+        <a href="mailto:REPLACE_WITH_SUPPORT_EMAIL" class="contact-line">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">REPLACE_WITH_SUPPORT_EMAIL</span>
+        </a>
+      </div>
+
+      <!-- Form posts to Formspree — REPLACE_WITH_FORMSPREE_ID before deploying -->
+      <form action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="New enquiry from emilylogisticsltd.co.uk">
         <div class="field">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" required />
+          <label for="name">Your Name *</label>
+          <input type="text" id="name" name="name" required>
         </div>
         <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" required />
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
         </div>
         <div class="field">
-          <label for="route">Pickup → Drop-off</label>
-          <input type="text" id="route" placeholder="e.g. Aberdeen → Birmingham" required />
+          <label for="route">Pickup &rarr; Drop-off</label>
+          <input type="text" id="route" name="route" placeholder="e.g. Aberdeen &rarr; Birmingham">
         </div>
         <div class="field">
           <label for="service">Service Required</label>
-          <select id="service">
-            <option>Full load (FTL)</option>
-            <option>Part load (LTL)</option>
-            <option>Plant / oversized</option>
-            <option>Workshop / repair</option>
-            <option>Not sure — advise</option>
+          <select id="service" name="service">
+            <option value="freight">Full load (FTL)</option>
+            <option value="ltl">Part load (LTL)</option>
+            <option value="carrier">Plant / oversized</option>
+            <option value="workshop">Workshop / repair</option>
+            <option value="other">Not sure &mdash; advise</option>
           </select>
         </div>
         <div class="field">
           <label for="notes">Notes</label>
-          <textarea id="notes" placeholder="Weight, timing, access, anything we should know"></textarea>
+          <textarea id="notes" name="message" placeholder="Weight, timing, access, anything we should know"></textarea>
         </div>
+        <p class="form-consent">
+          By submitting this form you agree to our <a href="/privacy.html">Privacy Policy</a>.
+        </p>
         <button type="submit" class="submit">Send Enquiry</button>
       </form>
     </div>
@@ -989,7 +358,7 @@
     <div class="contact-info">
       <div class="block">
         <div class="label">Registered Office</div>
-        <div class="value">28 Glebe Road<br/>Arbroath<br/>Scotland<br/>DD11 4HJ</div>
+        <div class="value">28 Glebe Road<br>Arbroath<br>Scotland<br>DD11 4HJ</div>
       </div>
       <div class="block">
         <div class="label">Company Number</div>
@@ -997,48 +366,109 @@
       </div>
       <div class="block">
         <div class="label">Hours</div>
-        <div class="value">Mon – Fri  ·  06:00 – 18:00<br/>Saturday by arrangement</div>
+        <div class="value">Mon &ndash; Fri &middot; 07:00 &ndash; 18:00<br>Sat &middot; 08:00 &ndash; 13:00</div>
       </div>
       <div class="block">
         <div class="label">Get a Quote</div>
-        <div class="value">Use the form, or call the yard during operating hours.</div>
+        <div class="value">Use the form or <a href="/contact.html" style="color:var(--hi-vis);text-decoration:underline;">visit the full contact page</a>.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="logo"><span class="mark">EL</span> Emily Logistics</div>
-      <p>Road freight, general carriage and commercial vehicle maintenance, operating from Arbroath since 2020.</p>
+<!-- TRUST STRIP -->
+<section class="trust-strip">
+  <div class="trust-grid">
+    <div class="trust-cell">
+      <div class="trust-num">5+</div>
+      <div class="trust-label">Years operating</div>
+      <div class="trust-meta">Established July 2020</div>
     </div>
+    <div class="trust-cell">
+      <div class="trust-num">UK</div>
+      <div class="trust-label">Wide coverage</div>
+      <div class="trust-meta">Scotland &rarr; South England</div>
+    </div>
+    <div class="trust-cell">
+      <div class="trust-num">3</div>
+      <div class="trust-label">Service divisions</div>
+      <div class="trust-meta">Freight &middot; Carrier &middot; Workshop</div>
+    </div>
+    <div class="trust-cell">
+      <div class="trust-num">SC667067</div>
+      <div class="trust-label">Companies House</div>
+      <div class="trust-meta">Verified, active company</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Emily Logistics Ltd</div>
+      <p>Time-critical freight, general carrier services and HGV workshop, operating UK-wide from Arbroath, Scotland.</p>
+      <p class="footer-meta">
+        Company No. SC667067 &mdash; Registered in Scotland<br>
+        28 Glebe Road, Arbroath, DD11 4HJ, United Kingdom
+      </p>
+    </div>
+
     <div class="footer-col">
       <h4>Services</h4>
-      <a href="#services">Freight Transport</a>
-      <a href="#services">General Carrier</a>
-      <a href="#services">Vehicle Workshop</a>
+      <ul>
+        <li><a href="/services.html#freight">Freight Transport</a></li>
+        <li><a href="/services.html#carrier">General Carrier</a></li>
+        <li><a href="/services.html#workshop">Vehicle Workshop</a></li>
+      </ul>
     </div>
+
     <div class="footer-col">
       <h4>Company</h4>
-      <a href="#operations">Operations</a>
-      <a href="#coverage">Coverage</a>
-      <a href="#contact">Contact</a>
+      <ul>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/support.html">Support</a></li>
+      </ul>
     </div>
+
     <div class="footer-col">
-      <h4>Registered</h4>
-      <li>SC667067</li>
-      <li>Companies House</li>
-      <li>Scotland</li>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms of Service</a></li>
+        <li><a href="/cookies.html">Cookie Policy</a></li>
+      </ul>
     </div>
   </div>
+
   <div class="footer-bottom">
-    <span>© 2020–2026 Emily Logistics Ltd</span>
-    <span>Registered in Scotland · No. SC667067</span>
-    <span>28 Glebe Road, Arbroath, DD11 4HJ</span>
+    <span>&copy; 2026 Emily Logistics Ltd. All rights reserved.</span>
+    <span>Companies House SC667067 &middot; Registered in Scotland</span>
   </div>
 </footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" class="cookie-banner" hidden>
+  <div class="cookie-banner-inner">
+    <p>We use only strictly necessary cookies on this website to make it work. See our <a href="/cookies.html">Cookie Policy</a> for details.</p>
+    <button type="button" id="cookie-accept" class="cookie-accept">Accept</button>
+  </div>
+</div>
+<script>
+  (function() {
+    var KEY = 'cookie_consent';
+    var banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    if (!localStorage.getItem(KEY)) {
+      banner.hidden = false;
+    }
+    document.getElementById('cookie-accept').addEventListener('click', function() {
+      localStorage.setItem(KEY, '1');
+      banner.hidden = true;
+    });
+  })();
+</script>
 
 </body>
 </html>
